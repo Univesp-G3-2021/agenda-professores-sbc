@@ -1,0 +1,431 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 5px;
+}
+
+a.logo img{
+    max-width: 200px;
+    max-height: 60px;
+}
+
+body {
+    font-family: helvetica, verdana, arial, sans-serif;
+    background-color: #cdcdf7;
+}
+
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+.red{
+    color: #ff0000;
+}
+.green{
+    color: #00ff00;
+}
+.yellow{
+    color: #ffff00;
+}
+
+.w100 {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+.h100 {
+    height: 100% !important;
+    max-height: 100% !important;
+    min-height: 100% !important;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.inline {
+    display: inline-block;
+    width: unset;
+}
+
+.modal-dialog, .modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+.modal-body {
+    overflow: auto;
+}
+
+#pageWrapper {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+#headWrapper {
+    height: 60px;
+    display: table-row;
+    vertical-align: middle;
+}
+#bodyWrapper {
+    height: 100%;
+    display: table-row;
+}
+#footWrapper {
+    height: 20px;
+    display: table-row;
+}
+
+.tablerow{
+    display: table-row;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 3px;
+    border: solid 1px #ced4da;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #cdcdf766;
+    min-width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.listelement {
+    margin-top: 5px;
+	width: 100% !important;
+	display: block;
+}
+
+.logo {
+    padding: 10px;
+    display: inline-block;
+}
+
+.tabsbox {
+    padding: 5px;
+    border: solid 1px #ced4da;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #ffffff66;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.mainToolBox {
+    font-size: .8rem;
+	margin: 10px 10px 10px 0;
+    display: inline-block;
+    float: right;
+}
+
+.mainToolBox > div {
+    background-color: unset;
+    display: block;
+    margin: 0 0 1px 0;
+}
+
+.mainToolBox span.badge {
+    font-size: 90%;
+    text-align: center;
+    padding: .3rem .25rem;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+#nav-tab {
+    border-bottom: solid 1px white;
+}
+
+.h40{
+    height: 40px;    
+}
+
+.hFull{
+    height: 100%;    
+}
+
+.nav-item {
+    border-color: #ffffff66 !important;
+    background-color: #ffffff66;
+    margin-right: 5px;
+}
+
+.nav-item .badge {
+  cursor:pointer;
+  transform:translate(10px,-10px);
+}
+
+.tab-content, .tab-pane {
+    height: 100%;
+}
+
+.tab-pane > div{
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+    display: table;
+    padding: 3px;
+    font-size: .8rem !important;
+}
+
+.tab-pane .body{
+    overflow-y: auto;
+    height: calc(100vh - 160px);
+    display: table-row;
+}
+
+.search .input-group span {
+    border: solid 1px #cccccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #efefef;
+    min-width: 35px;
+}
+
+.search .input-group span::before {
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    display: table-cell;
+}
+
+.toolBar > .btn-group {
+    margin-left: 2px !important; 
+}
+
+.grayout {
+    background-color: gray;
+}
+
+.actionBar .customBar {
+    margin-right: 20px;
+    w-idth: 36px;
+    height: 38px;
+}
+
+.bootgrid-table td{
+    padding: .35rem !important;
+}
+
+.required {
+    border-color: red;
+}
+
+.tab-pane-page {
+    height: 100%;
+}
+
+.tab-pane-page>div{
+    display: inline-block;
+    height: 100%;
+}
+
+.tab-pane-page #page-tree-pane{
+    width: 20%;
+}
+
+.tab-pane-page #page-content-pane{
+    width: 80%;
+    border-left: dotted 1px silver;
+    float: right;
+    padding-left: 3px;
+}
+
+#pane_main_dashboard  .dashboard-div{
+    background-color: #f9f9ff;
+    border-radius: 6px;
+    border: solid 1px silver;
+}
+
+.datepicker-days tbody, .datepicker-days thead{
+    padding: 3px;
+}
+
+.datepicker-days tbody th, .datepicker-days tbody td, .datepicker-days thead .dow{
+    padding: 3px;
+    border: dotted thin silver;
+}
+
+#calendar-event-form>h5{
+    text-align: center;
+}
+
+#calendar-event-form .row{
+    border-radius: 4px;
+    padding: 1px;
+    b-ackground-color: #ffffff99;
+    margin: 1px;
+}
+
+#calendar-event-form .row:last{
+    border-bottom: none;
+}
+
+#calendar-event-form li i{
+    float: right;
+}
+
+#calendar-event-form .identificacao, #calendar-event-form .atividade{
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+#calendar-event-form .pergunta, #calendar-event-form .atividade{
+    font-size: 1em;
+    display: inline-block;
+}
+
+#calendar-event-form .resposta, #calendar-event-form .descricao{
+    border-radius: 4px;
+    background-color: white;
+    border: dotted thin gray;
+    margin: 0 2px 2px 2px;
+    font-size: 1em;
+    display: block;
+}
+
+.agenda-item-visible{
+    display: block !important;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border-radius: 6px;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+}
+
+ul.downloads-list{
+    padding: 0;  
+    overflow-x: auto;
+}
+
+.downloads-list li{
+    border-radius: 5px;
+    border: solid thin gray;
+    background-color: #ffffe0;
+    width: 100%;
+    display: block;
+    margin: 1px;
+}
+
+.downloads-list li a{
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.downloads-list li::before{
+    font-style: normal;
+    font-variant: normal;
+    font-family: "Font Awesome 5 Free"; 
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px 0 3px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.downloads-list li::before{
+    content: "\f381" !important;
+    font-weight: 900;
+}
+
+.downloads-list li i{
+    float: right;
+    margin: 3px;
+}
+
+.card #title .toolBar{
+    float: right;
+}
+
+table#nodes tr, table#nodes li{
+    display: block;
+    margin: 10px;
+}
+
+table#nodes td, table#nodes td.jump, table#nodes li{
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: #f0e0ff;
+}
+
+table#nodes td.comp{
+    padding: 10px;
+    background-color: white;
+    border-width: 0;
+    border-color: white;
+}
+
+table#nodes td.jump {
+    display: table-cell;
+}
+
+table#nodes td.comp > tr::before, table#nodes td.jump > tr::before{
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0d9";
+    transform: translate(1px, 50%);
+    float: left;
+}
+
+table#nodes li::before{
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0d9";
+    transform: translate(-16px, 0px);
+    float: left;
+}
+
+table#nodes .weditable i{
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+label {
+    margin: 0 0 0 0;
+    padding: 0 5px 0 5px;
+    background-color: #ffffffcc;
+    transform: translate(10px, 10px);
+    font-variant: small-caps;
+    font-weight: bolder;
+    border-radius: 7px;
+}
+
+.custom-file-upload {
+    transform: none !important;
+    margin: 0 0 5px 0 !important;
+}
+
+.rotate-90{
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); 
+}
+
+.formOk::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f058";
+    color: green;
+}
+
+.formNoOk::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f056";
+    color: red;
+}
