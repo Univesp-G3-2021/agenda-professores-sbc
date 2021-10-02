@@ -1,6 +1,17 @@
-# PJI110 Projeto Integrador Em Computação I 
-## S2-2021 Grupo 3 - Polo São Bernardo do Campo 
+# PJI-110 Projeto Integrador Em Computação I 
+## 2º Semestre-2021 - Grupo 3 - Polo São Bernardo do Campo 
+
 ### Orientador(a): Daniela Casimiro De Figueredo
+### ALunos:
+ - Andre de Oliveira Mendes Casanova <2000839@aluno.univesp.br> 
+ - Bruna Martins Rogante <2014481@aluno.univesp.br>
+ - Emerson de Mattos Reis <2009360@aluno.univesp.br>
+ - Guilherme Padilha Batista <2011386@aluno.univesp.br>
+ - Marcos Lohmann <2006775@aluno.univesp.br>
+ - Rodrigo Henrique Machado da Silva <1402332@aluno.univesp.br> 
+ - Victoria Sayuri Ishibaru da Silva <2007625@aluno.univesp.br>
+
+## Tema
 Software de identificação de disponibilidade de professores volantes para cobrir faltas de professores titulares da rede municipal de São Bernardo do Campo utilizando framework web, banco de dados e versionamento.
 
 ## Problema
