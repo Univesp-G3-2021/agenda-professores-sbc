@@ -11,4 +11,9 @@ Desenvolver um software com framework web que utiliza banco de dados e controle 
 
 ## Implementação
 ### MS Azure
-URL: https://agenda-professores-sbc.azurewebsites.net
+Site URL: https://agenda-professores-sbc.azurewebsites.net
+Runtime Info: https://agenda-professores-sbc.azurewebsites.net/_info.php
+
+### Diagrama dos Recursos
+![plot](./docs/azure-print-3.jpeg)
+
