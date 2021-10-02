@@ -2,7 +2,7 @@
 ## 2º Semestre-2021 - Grupo 3 - Polo São Bernardo do Campo 
 
 ### Orientador(a): Daniela Casimiro De Figueredo
-### ALunos:
+### Alunos:
  - Andre de Oliveira Mendes Casanova <2000839@aluno.univesp.br> 
  - Bruna Martins Rogante <2014481@aluno.univesp.br>
  - Emerson de Mattos Reis <2009360@aluno.univesp.br>
