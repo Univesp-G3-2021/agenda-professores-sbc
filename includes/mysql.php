@@ -1,8 +1,8 @@
 <?php
 class DBConn{
 	private $servername = "agenda-professores-sbc-server";
-	private $username = "Zzrniuwpoa";
-	private $password = "23U1I7AJPGBPT241$";
+	private $username = $_SERVER["APPSETTING_mysql_user"];
+	private $password = $_SERVER["APPSETTING_mysql_pswd"];
 	private $database = "agenda_professores_sbc";
 	private $conn = null;
 
