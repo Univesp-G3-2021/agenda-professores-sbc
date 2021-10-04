@@ -36,6 +36,7 @@ $(function(){
     });
     var _loadHome = function(){
         $('body').empty().load('/view/home.html',{},function(){
+            console.log("pronto pra carregar agenda");
             $("#agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);
         });
     }
