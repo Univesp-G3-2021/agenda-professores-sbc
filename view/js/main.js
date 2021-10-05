@@ -42,6 +42,7 @@ $(function(){
                     center: "title",
                     right: "month,agendaWeek,agendaDay,listMonth"
                 },
+                height: function(){return $("#nav-tabContent").innerHeight()-5;},
                 defaultView: "agendaWeek",
                 selectable: true,
                 locale: "pt-br",
