@@ -61,7 +61,7 @@ $(function(){
                     endTime: '17:00',
                 },
                 windowResize: function(view) {
-                    //$("#agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
+                    $("#agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
                 },
                 eventSources: [],
                 events:[{
