@@ -53,7 +53,7 @@ $(function(){
                 eventLimit: true, 
                 minTime: "00:00:00",
                 maxTime: "23:59:59",
-                scrollTime: "18:00:00",
+                scrollTime: "07:00:00",
                 slotEventOverlap: false,
                 businessHours: {
                     daysOfWeek: [ 1, 2, 3, 4, 5 ],
@@ -61,7 +61,7 @@ $(function(){
                     endTime: '17:00',
                 },
                 windowResize: function(view) {
-                    $("#agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
+                    //$("#agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
                 },
                 eventSources: [],
                 events:[{
