@@ -78,6 +78,10 @@ body {
     display: table-row;
 }
 
+#agenda {
+    background-color: white;
+}
+
 .tablerow{
     display: table-row;
 }
