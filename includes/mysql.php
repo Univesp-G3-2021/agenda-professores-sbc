@@ -8,10 +8,13 @@ class DBConn{
 
 	public function getConn(){
 		if(is_null($this->conn)){
-			$this->conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
+			$this->conn = new mysqli($this->servername, $this->username, $this->password);
 			if ($this->conn->connect_errno) {
 				error_log("Failed to connect to MySQL: ".$this->conn->connect_error, 0);
-			}
+			}else{
+                $this->conn->query("CREATE DATABASE IF NOT EXISTS ". $this->database);
+                $this->conn->select_db($this->database);
+            }
 		}
 		return $this->conn;
 	}
