@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: none;
+}
+
+header {
+    position:fixed;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: white;
+}
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#logo {
+    width: 25%;
+    height: auto;
+    display:flex;
+    align-items: left;
+    margin-left: 2%;
+}
+
+#tipo_user {
+    padding-top: 17%;
+}
+
+.ladoLado {
+    display: inline-block;
+    width: 49%;
+}
+
+.img {
+    width: 30%;
+    height: auto;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao {
+    margin-top: 5%;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    text-align: center; 
+    cursor: pointer;
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 20px;
+    color: white; 
+    justify-content: center;
+    white-space: normal;
+    transition:all 0.3s ease;
+}
+
+
+
+#botao_secretaria {
+    background-color:#008AD0;
+
+}
+#botao_secretaria:hover { 
+    background-color:#006ea5;
+   } 
+
+#botao_escola {
+    background-color: #F39224;
+}
+
+#botao_escola:hover { 
+    background-color: #dd7c0d; 
+   } 
