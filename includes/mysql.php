@@ -1,9 +1,9 @@
 <?php
 class DBConn{
-	private $servername = "agenda-professores-sbc-server";
-	private $username = $_SERVER["APPSETTING_mysql_user"];
-	private $password = $_SERVER["APPSETTING_mysql_pswd"];
-	private $database = "agenda_professores_sbc";
+	private $servername = ini_get('mysql_hostname');
+	private $username = ini_get('mysql_username');
+	private $password = ini_get('mysql_password');
+	private $database = ini_get('mysql_database');
 	private $conn = null;
 
 	public function getConn(){
