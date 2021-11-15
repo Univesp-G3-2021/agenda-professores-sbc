@@ -1,9 +1,9 @@
 <?php
 class DBConn{
-	private $servername = ini_get('mysql_hostname');
-	private $username = ini_get('mysql_username');
-	private $password = ini_get('mysql_password');
-	private $database = ini_get('mysql_database');
+	private $servername = ini_get('mysqli.default_host');
+	private $username = ini_get('mysqli.default_user');
+	private $password = ini_get('mysqli.default_pw');
+	private $database = ini_get('mysqli.default_user');
 	private $conn = null;
 
 	public function getConn(){
