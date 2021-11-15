@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educagenda</title>
+    <link href="style_secretaria.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <nav>
+
+            <img id="logo" src="../imgs/sbc.png" alt="Brasão de São Bernardo"> 
+            <h1 id="nome">EDUCAGENDA</h1>
+
+            <ul id="menu" class="lado_direito">
+                <li><a class="n_atual" href="home_secretaria.html">Home</a></li>
+                <li><a class="n_atual" href="solicitacoes.html">Solicitações</a></li>
+                <li><a href="preciso_volante.html">Preciso de um volante</a></li>
+                <li><a class="n_atual" href="escolas.html">Escolas</a></li>
+                <li><a class="n_atual" href="comprovantes.html">Comprovantes</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="grid_inversa">
+            <div id="formulario">
+                <h2>Solicitação</h2>
+                <div class="espaco_volantes">
+                    <div class="formLinha2">
+                        <input type="number" name="Matrícula" placeholder="Matrícula" style="height: 25px;">
+                        <input type="text" name="Nome do professor" placeholder="Nome do professor" style="height: 25px;">
+                    </div>
+                    <div class= "grid_2">
+                        <h4>Data inicial</h4>
+                        <h4>Data final</h4>
+                    </div>
+                    
+                    <div class="formLinha2">
+                        <input type="date" name="Matrícula" placeholder="Data inicial" style="height: 25px;">
+                        <input type="date" name="Matrícula" placeholder="Data final" style="height: 25px;">
+                    </div>
+                    <div class="formLinha2">
+                        <select id= "período" class="none" style="height: 25px;">
+                            <option value="" disabled selected>Período</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                        </select>
+                        <input type="text" name="Turma" placeholder="Turma" style="height: 25px;">
+                    </div>
+                    <div class="formLinha1">
+                        <select id= "nome_escola" class="none" style="height: 25px;">
+                            <option value="" disabled selected>Nome da escola</option>
+                            <option value="Manhã">Puxar do banco de dados</option>
+                        </select>
+                    </div>
+                    <div class="formLinha1">
+                        <select id= "Motivo" class="none" style="height: 25px;">
+                            <option value="" disabled selected>Motivo</option>
+                            <option value="Manhã">Adicionar os motivos</option>
+                        </select>
+                    </div>
+                    <textarea name="observacao" id="observacao" style="height:130px;" placeholder="Observação"></textarea>
+                    <input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Procurar" class="botao">
+                </div>
+            </div>
+                
+            <div id="principal">
+                <h2>Volantes disponíveis</h2>
+                <div class=espaco_volantes>
+                    <h3>Espaço para tabela</h3>
+                    <input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Selecionar" class="botao">
+                </div>
+                
+            </div>
+            
+        </section>
+
+    </main>
+</body>
+</html>
