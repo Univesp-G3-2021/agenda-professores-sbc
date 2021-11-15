@@ -21,12 +21,9 @@ Como auxiliar o Setor de Movimentação do Quadro de Magistério da Secretaria d
 Desenvolver um software com framework web que utiliza banco de dados e controle de versões que seja capaz de sanar a dificuldade que funcionários do Setor de Movimentação do Quadro de Magistério da Secretaria de Educação do município de São Bernardo do Campo tem em realizar a movimentação de professores volantes entre escolas, levando em consideração a disponibilidade e a proximidade destes, afim de prover a substituição de professores titulares, em eventuais ausências, das escolas do município de São Bernardo do Campo.
 
 ## Implementação
-### MS Azure
- - Site URL: https://agenda-professores-sbc.azurewebsites.net
- - Runtime Info: https://agenda-professores-sbc.azurewebsites.net/_info.php
-
-### Diagrama dos Recursos
-![plot](./docs/azure-print-3.jpeg)
+### Web-Host
+ - Site URL: https://agenda-professores-sbc.projeto-integrador.app.br
+ - Runtime Info: https://agenda-professores-sbc.projeto-integrador.app.br/_info.php
 
 ### Diagrama de Arquitetura
 ![plot](./docs/diagrama-1.png)
