@@ -95,10 +95,19 @@ main {
     grid-template-columns: 60% 39%;
 }
 
+#grid_tres{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
 
 #grid_inversa{
     display: grid;
     grid-template-columns: 45% 54%;
+}
+
+#grid_2_centro{
+    display: grid;
+    grid-template-columns: 50% 49%;
 }
 
 .grid_2{
@@ -106,8 +115,25 @@ main {
     grid-template-columns: 51% 49%;
 }
 
+#formulario_div1{
+    padding: 20px 5% 0 5%;
+}
+#formulario_div2{
+    padding: 20px 5% 0 5%;
+}
+
 #principal{
+    margin-top: 125px;
+}
+
+#principal_solicitacao{
     margin-top: 100px;
+}
+
+.kanban{
+    margin-top: 125px;
+    padding: 0 2% 0 2%;
+
 }
 
 #espaco_tabela{
@@ -122,6 +148,69 @@ main {
 
 }
 
+#espaco_tabela_escola{
+
+    width: 85%;
+    height: 360px;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(243, 146, 36, 0.36);
+    border-radius: 5px;
+
+}
+
+#calendario{
+
+    width: 100%;
+    height: 450px;
+    margin: 0px;
+    margin-top: 110px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 139, 208, 0);
+    border: 2px solid rgba(0, 139, 208);
+    border-radius: 5px;
+
+}
+
+#calendario_escola{
+
+    width: 100%;
+    height: 450px;
+    margin: 0px;
+    margin-top: 110px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 139, 208, 0);
+    border: 2px solid rgba(243, 146, 36);
+    border-radius: 5px;
+
+}
+
+#esp_atividade{
+
+    width: 100%;
+    height: 335px;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 139, 208, 0);
+    border: 2px solid rgba(243, 146, 36);
+    border-radius: 5px;
+
+}
+#cad_atv{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+#atividade{
+    margin-top: 100px;
+}
+#relative {
+    position:relative;
+}
+
 .espaco_volantes{
 
     width: 100%;
@@ -134,8 +223,38 @@ main {
 
 }
 
-h3{
-    
+.espaco_kanban{
+
+    width: 100%;
+    height: 385px;
+    margin: 0px;
+    padding: 7%;
+    background-color: rgba(0, 139, 208, 0);
+    border: 2px solid rgba(0, 139, 208);
+    border-radius: 5px;
+
+}
+
+.titulo_kanban{
+
+    width: 100%;
+    height: 30px;
+    margin: 0px;
+    background-color: rgba(0, 139, 208,  0.22);
+    border: 2px solid rgba(0, 139, 208, 0);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+.kanban h2{
+    color: #3E3E3E; 
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+    margin-top: 3px;
 }
 
 #botão_volante{
@@ -159,6 +278,31 @@ h3{
     
 }
 
+#botão_volante_escola{
+    display:flex;
+    margin: 90px 0 0 25%;
+    width:50%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    text-align: center; 
+    cursor: pointer;
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 20px;
+    color: #3E3E3E; 
+    justify-content: center;
+    white-space: normal;
+    transition:all 0.3s ease;
+    background-color: rgba(243, 146, 36, 0.22);
+    align-items: right;
+    
+}
+
+#ponta{
+    text-align: left;
+}
+
 #botoes_inicio{
     width: 95%;
     height: 360px;
@@ -174,6 +318,22 @@ h3{
     height: 360px;
     margin: 0px;
     margin-top: 100px;
+}
+
+#dados_solicitacao{
+    width: 95%;
+    height: 360px;
+    margin: 0px;
+    margin-top: 100px;
+}
+
+#dados_solicitacao h3{
+    color: #3E3E3E; 
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 1em;
+    margin: 0;
+    margin-top: 3px;
 }
 
 select{
@@ -210,6 +370,8 @@ textarea {
 .botao:hover {
     background-color: rgba(0, 139, 208, 0.36);
 }
+
+
 
 .botao_simples {
     margin-bottom: 12%;
@@ -251,18 +413,45 @@ h4 {
     margin: 0;
 }
 
-.formLinha1 {
+
+#formulario_div1 .formLinha1 {
     width: 100%;
-    padding-bottom: 8px;
+    padding-bottom: 15px;
     margin-right: 50%;
 }
 
-.formLinha2 {
+#formulario_div1 .formLinha2 {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 8px;
     justify-self: center;
-    padding-bottom: 8px;
+    padding-bottom: 15px;
 }
 
+#formulario_div2 .formLinha1 {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-right: 50%;
+}
+
+#formulario_div2 .formLinha2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    justify-self: center;
+    padding-bottom: 15px;
+}
+
+.escola {
+    background-color: #F39224;
+}
+
+.escola_22 {
+    background-color: RGB(243, 146, 36, 0.22);
+}
+
+.escola_22:hover {
+    background-color: rgba(243, 146, 36, 0.36);
+}

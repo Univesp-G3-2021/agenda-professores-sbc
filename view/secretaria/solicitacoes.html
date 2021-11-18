@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educagenda</title>
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <nav>
+
+            <img id="logo" src="../imgs/sbc.png" alt="Brasão de São Bernardo"> 
+            <a id="nome" href="../pre-home/pre-home.html" style="text-decoration:none">EDUCAGENDA</a>
+
+            <ul id="menu" class="lado_direito">
+                <li><a class="n_atual" href="home_secretaria.html">Home</a></li>
+                <li><a href="solicitacoes.html">Solicitações</a></li>
+                <li><a class="n_atual" href="preciso_volante.html">Preciso de um volante</a></li>
+                <li><a class="n_atual" href="escolas.html">Escolas</a></li>
+                <li><a class="n_atual" href="comprovantes.html">Comprovantes</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="grid_inversa">
+            <div id="dados_solicitacao">
+                <h2>Solicitação</h2>
+                <div class="espaco_volantes">
+                    <h3>Nome da escola</h3>
+                    <h3>Matrícula</h3>
+                    <h3>Nome do professor</h3>
+                    <h3>Data inicial</h3>
+                    <h3>Data final</h3>
+                    <h3>Período</h3>
+                    <h3>Turma</h3>
+                    <h3>Motivo</h3>
+                    <h3>Comprovante</h3>
+                    <h3 id="obs">Observações</h3>
+                </div>
+            </div>
+                
+            <div id="principal_solicitacao">
+                <h2>Volantes disponíveis</h2>
+                <div class=espaco_volantes>
+                    <h3>Espaço para tabela</h3>
+                    <input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Selecionar" class="botao">
+                </div>
+                
+            </div>
+            
+        </section>
+
+    </main>
+</body>
+</html>

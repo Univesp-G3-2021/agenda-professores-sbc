@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educagenda</title>
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header class='escola' id="relative">
+        <nav>
+
+            <img id="logo" src="../imgs/sbc.png" alt="Brasão de São Bernardo"> 
+            <a id="nome" href="../pre-home/pre-home.html" style="text-decoration:none">EDUCAGENDA</a>
+
+            <ul id="menu" class="lado_direito">
+                <li><a class="n_atual" href="home_escola.html">Home</a></li>
+                <li><a class="n_atual" href="calendario_escola.html">Calendário</a></li>
+                <li><a href="atividade_escola.html">Cadastrar atividades</a></li>
+                <li><a class="n_atual" href="volante_escola.html">Solicitar volante</a></li>
+                <li><a class="n_atual" href="comprovantes_escola.html">Comprovantes</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2 id="cad_atv">Cadastrar atividade</h2>
+        <div id="esp_atividade">
+            <section id="grid_2_centro">
+                <div id="formulario_div1">
+                    <div class="formLinha2">
+                        <input type="number" name="Matrícula" placeholder="Matrícula do professor volante" style="height: 25px;">
+                        <input type="text" name="Nome do professor" placeholder="Nome do professor volante" style="height: 25px;">
+                    </div>
+                    <div class= "grid_2">
+                        <h4>Data inicial</h4>
+                        <h4>Data final</h4>
+                    </div>
+                    
+                    <div class="formLinha2">
+                        <input type="date" name="Matrícula" placeholder="Data inicial" style="height: 25px;">
+                        <input type="date" name="Matrícula" placeholder="Data final" style="height: 25px;">
+                    </div>
+                    <div class="formLinha1">
+                        <select id= "período" class="none" style="height: 25px;">
+                            <option value="" disabled selected>Período</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                        </select>
+                        
+                    </div>
+                
+                    <textarea name="observacao" id="observacao" style="height:130px;" placeholder="Observação"></textarea>
+                   
+                </div>
+                    
+                <div id="formulario_div2">
+                    <div class="formLinha2">
+                        <input type="number" name="Matrícula" placeholder="Matrícula do prof a ser substituido" style="height: 25px;">
+                        <input type="text" name="Nome do professor" placeholder="Nome do prof a ser substituido" style="height: 25px;">
+                    </div>
+                    <div class="formLinha1">
+                        <input type="text" name="Turma" placeholder="Turma" style="height: 25px; width:100%">
+                    </div>
+                    <div class="formLinha1">
+                        <select id= "Motivo" class="none" style="height: 25px;">
+                            <option value="" disabled selected>Motivo</option>
+                            <option value="Manhã">Adicionar os motivos</option>
+                        </select>
+                    </div>
+                    <h4 id="ponta">Anexar comprovante</h4>
+                    <input type="button" id= "botão_volante_escola" onclick="location.href='preciso_volante.html'" value="Selecionar" class="botao_escola">
+                </div>
+                
+            </section>
+        </div>
+        
+
+    </main>
+</body>
+</html>
