@@ -83,10 +83,27 @@
             <div id="principal_buscar">
                 <h2>Volantes disponíveis</h2>
                 <div class=espaco_volantes_solicitacao>
-                    <h3>Espaço para tabela</h3>
-                    <button type='submit' name="Selecionar" class="botao_escola">Selecionar</button>
-                    <!--<input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Selecionar" class="botao"> -->
-
+                    <form method="POST" action="processa.php">
+                        <div class="formLinha1">
+                            <select name="volante" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Volante</option>
+                                <option value="volante_1">5658 - Volante 1</option>
+                                <option value="volante_2">4582 - Volante 2</option>
+                                <option value="volante_3">3574 - Volante 3</option>
+                                <option value="volante_2">4582 - Volante 4</option>
+                                <option value="volante_3">3574 - Volante 5</option>
+                            </select>
+                        </div>
+                        <div class="formLinha1">
+                            <select name="escola" id= "nome_escola" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Nome da escola</option>
+                                <option value="A">Escola A</option>
+                                <option value="B">Escola B</option>
+                                <option value="C">Escola C</option>
+                            </select>
+                        </div>
+                    </form>
+                    <button type='submit' name="enviar" class="botao_escola">Selecionar</button>
                 </div>
                 
             </div>
