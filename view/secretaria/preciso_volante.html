@@ -28,50 +28,65 @@
         <section id="grid_inversa">
             <div id="formulario">
                 <h2>Solicitação</h2>
-                <div class="espaco_volantes">
-                    <div class="formLinha2">
-                        <input type="number" name="Matrícula" placeholder="Matrícula" style="height: 25px;">
-                        <input type="text" name="Nome do professor" placeholder="Nome do professor" style="height: 25px;">
-                    </div>
-                    <div class= "grid_2">
-                        <h4>Data inicial</h4>
-                        <h4>Data final</h4>
-                    </div>
-                    
-                    <div class="formLinha2">
-                        <input type="date" name="Matrícula" placeholder="Data inicial" style="height: 25px;">
-                        <input type="date" name="Matrícula" placeholder="Data final" style="height: 25px;">
-                    </div>
-                    <div class="formLinha2">
-                        <select id= "período" class="none" style="height: 25px;">
-                            <option value="" disabled selected>Período</option>
-                            <option value="Manhã">Manhã</option>
-                            <option value="Tarde">Tarde</option>
-                        </select>
-                        <input type="text" name="Turma" placeholder="Turma" style="height: 25px;">
-                    </div>
-                    <div class="formLinha1">
-                        <select id= "nome_escola" class="none" style="height: 25px;">
-                            <option value="" disabled selected>Nome da escola</option>
-                            <option value="Manhã">Puxar do banco de dados</option>
-                        </select>
-                    </div>
-                    <div class="formLinha1">
-                        <select id= "Motivo" class="none" style="height: 25px;">
-                            <option value="" disabled selected>Motivo</option>
-                            <option value="Manhã">Adicionar os motivos</option>
-                        </select>
-                    </div>
-                    <textarea name="observacao" id="observacao" style="height:130px;" placeholder="Observação"></textarea>
-                    <input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Procurar" class="botao">
+                <form method="POST" action="processa.php">
+                    <div class="espaco_volantes_solicitacao">
+                        <div class="formLinha2">
+                            <input type="number" name="matricula" placeholder="Matrícula" style="height: 25px;">
+                            <input type="text" name="nome_professor" placeholder="Nome do professor" style="height: 25px;">
+                        </div>
+                        <div class= "grid_2">
+                            <h4>Data inicial</h4>
+                            <h4>Data final</h4>
+                        </div>
+                        
+                        <div class="formLinha2">
+                            <input type="date" name="data_inicio" placeholder="Data inicial" style="height: 25px;">
+                            <input type="date" name="data_fim" placeholder="Data final" style="height: 25px;">
+                        </div>
+                        <div class="formLinha2">
+                            <select name= "periodo" id= "período" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Período</option>
+                                <option value="Manha">Manhã</option>
+                                <option value="Tarde">Tarde</option>
+                                <option value="Integral">Integral</option>
+                            </select>
+                            <input type="text" name="turma" placeholder="Turma" style="height: 25px;">
+                        </div>
+                        <div class="formLinha1">
+                            <select name="escola" id= "nome_escola" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Nome da escola</option>
+                                <option value="A">Escola A</option>
+                                <option value="B">Escola B</option>
+                                <option value="C">Escola C</option>
+                            </select>
+                        </div>
+                        <div class="formLinha1">
+                            <select name="motivo" id= "Motivo" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Motivo</option>
+                                <option value="Manhã">F.A.</option>
+                                <option value="Doacao_Sangue">Doação de sangue</option>
+                                <option value="Isolamento">Isolamento</option>
+                                <option value="Juri">Júri</option>
+                                <option value="L.T.S">L.T.S.</option>
+                                <option value="Nojo">Licença Nojo</option>
+                                <option value="P.T.S">P.T.S</option>
+                                <option value="T.R.E">T.R.E</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <textarea name="observacao" id="observacao" style="height:130px;" placeholder="Observação"></textarea>
+                    </form>
+                    <button type='submit' name="enviar" class="botao_escola">Enviar</button>
                 </div>
             </div>
                 
-            <div id="principal">
+            <div id="principal_buscar">
                 <h2>Volantes disponíveis</h2>
-                <div class=espaco_volantes>
+                <div class=espaco_volantes_solicitacao>
                     <h3>Espaço para tabela</h3>
-                    <input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Selecionar" class="botao">
+                    <button type='submit' name="Selecionar" class="botao_escola">Selecionar</button>
+                    <!--<input type="button" id= "botão_volante" onclick="location.href='preciso_volante.html'" value="Selecionar" class="botao"> -->
+
                 </div>
                 
             </div>

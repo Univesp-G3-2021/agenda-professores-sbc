@@ -126,6 +126,10 @@ main {
     margin-top: 125px;
 }
 
+#principal_buscar{
+    margin-top: 100px;
+}
+
 #principal_solicitacao{
     margin-top: 100px;
 }
@@ -223,10 +227,22 @@ main {
 
 }
 
-.espaco_volantes_escola{
+.espaco_volantes_solicitacao{
 
     width: 100%;
-    height: 400px;
+    height: 430px;
+    margin: 0px;
+    padding: 5%;
+    background-color: rgba(0, 139, 208, 0);
+    border: 2px solid rgba(0, 139, 208);
+    border-radius: 5px;
+
+}
+
+.espaco_volantes_solicitacao_escola{
+
+    width: 100%;
+    height: 430px;
     margin: 0px;
     padding: 5%;
     background-color: rgba(0, 139, 208, 0);
@@ -316,6 +332,27 @@ main {
 #botão_volante_escola{
     display:flex;
     margin: 90px 0 0 25%;
+    width:50%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    text-align: center; 
+    cursor: pointer;
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 20px;
+    color: #3E3E3E; 
+    justify-content: center;
+    white-space: normal;
+    transition:all 0.3s ease;
+    background-color: rgba(243, 146, 36, 0.22);
+    align-items: right;
+    
+}
+
+#botão_volante_escola_solicitacao{
+    display:flex;
+    margin: 7px 0 0 25%;
     width:50%;
     height: 40px;
     border-radius: 5px;
@@ -446,6 +483,21 @@ h4 {
     font-weight: 800;
     font-size: 12px;
     margin: 0;
+}
+
+.formLinha1 {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-right: 50%;
+}
+
+.formLinha2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    justify-self: center;
+    padding-bottom: 15px;
 }
 
 
