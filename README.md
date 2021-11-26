@@ -27,3 +27,6 @@ Desenvolver um software com framework web que utiliza banco de dados e controle 
 
 ### Diagrama de Arquitetura
 ![plot](./docs/diagrama-1.png)
+
+### Modelo ER Banco de Dados
+![plot](./docs/educagenda-modelo-er.png)
