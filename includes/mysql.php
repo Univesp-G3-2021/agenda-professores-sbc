@@ -11,6 +11,7 @@ class DB{
 			$this->conn = new mysqli(ini_get('mysqli.default_host'), ini_get('mysqli.default_user'), ini_get('mysqli.default_pw'), ini_get('mysqli.default_user'));
 			if ($this->conn->connect_errno) {
 				error_log("Failed to connect to MySQL: ".$this->conn->connect_error, 0);
+				exit();
 			}
 		}
 		return $this->conn;
