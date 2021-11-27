@@ -142,6 +142,7 @@ function doIt($className, $methodName, $arguments = []){
 }
 
 try{
+    error_log(json_encode($_REQUEST));
     doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
 }catch(Exception $e){
     http_response_code(400);
