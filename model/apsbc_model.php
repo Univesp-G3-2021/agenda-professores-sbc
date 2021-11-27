@@ -96,17 +96,35 @@ class Professor{
 class Classe{
 
     public static function get($cls_codigo){
-        $res = MySQL::query("SELECT * FROM classe WHERE cls_codigo='$cls_codigo'");
+        $res = MySQL::query("SELECT * FROM classe_detalhe WHERE cls_codigo='$cls_codigo'");
         echo json_encode($res[0]);
     }
 
+    public static function gridAll($page=1, $limit=10, $searchPhrase=""){
+        $offset = ($page-1) * $limit;
+        
+        $fullTxtSrch = "";
+        if(strlen(trim($searchPhrase))>3) $fullTxtSrch = "WHERE esc_nome LIKE '%$searchPhrase%'"; 
+        
+        $ct = MySQL::query("SELECT count(cls_codigo) as quant FROM classe_detalhe");
+        $res = MySQL::query("SELECT * FROM classe_detalhe $fullTxtSrch ORDER BY esc_nome LIMIT $offset, $limit");
+        echo json_encode(
+            array(
+                "current"=>$page, 
+                "rowCount"=>$limit, 
+                "rows"=>$res, 
+                "total"=>$ct[0]["quant"]
+            )
+        );
+    }
+
     public static function listByEscola($esc_codigo){
-        $res = MySQL::query("SELECT * FROM classe WHERE esc_codigo='$esc_codigo'");
+        $res = MySQL::query("SELECT * FROM classe_detalhe WHERE esc_codigo='$esc_codigo'");
         echo json_encode($res);
     }
 
     public static function getByProfessor($prf_codigo){
-        $res = MySQL::query("SELECT * FROM classe WHERE prf_codigo='$prf_codigo'");
+        $res = MySQL::query("SELECT * FROM classe_detalhe WHERE prf_codigo='$prf_codigo'");
         echo json_encode($res[0]);
     }
 
