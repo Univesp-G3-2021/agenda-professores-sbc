@@ -6,7 +6,7 @@ var modEscolas = {
                 method: "GET",
                 cache: false
             },
-            url: "/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=1,10",
+            url: "/model/apsbc_model.php?className=Escola&methodName=gridAll&arguments=1,10",
             formatters:{}
         }).on("load.rs.jquery.bootgrid", function (e)
         {
