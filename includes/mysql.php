@@ -32,7 +32,7 @@ class MySQL{
 	public static function update($query){
 		$db = new DB();
 		$res = $db->getConn()->query($query);
-		$ret $db->affected_rows;
+		$ret = $db->affected_rows;
 		try{ $res->close(); } catch(Exception $e){ error_log($e); }
 		try{ $db->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
