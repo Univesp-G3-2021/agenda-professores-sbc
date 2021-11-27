@@ -96,13 +96,13 @@ class Classe{
 
 class Agenda{
 
-    public static function listByDate($sol_agenda_inicio, $sol_agenda_termino){
-        $res = MySQL::query("SELECT * FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino'");
+    public static function listMovimentosByDate($sol_agenda_inicio, $sol_agenda_termino){
+        $res = MySQL::query("SELECT * FROM agenda_volantes WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino'");
         echo json_encode($res);
     }
 
-    public static function listByDateByVolante($sol_agenda_inicio, $sol_agenda_termino, $prf_volante){
-        $res = MySQL::query("SELECT * FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino' AND prf_volante='$prf_volante'");
+    public static function listMovimentosByDateByVolante($sol_agenda_inicio, $sol_agenda_termino, $prf_volante){
+        $res = MySQL::query("SELECT * FROM agenda_volantes WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino' AND prf_volante='$prf_volante'");
         echo json_encode($res);
     }
     
