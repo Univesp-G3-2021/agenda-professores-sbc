@@ -23,8 +23,8 @@ class MySQL{
 	public static function query($query){
 		$db = new DB();
 		$res = $db->getConn()->query($query);
-		$ret = $res?$res->fetch_all():null;
-		try{ $res->close(); } catch(Exception $e){ error_log($e); }
+		$ret = $res ? $res->fetch_all(MYSQLI_ASSOC) : null;
+		if($res!=false) try{ $res->free_result(); } catch(Exception $e){ error_log($e); }
 		try{ $db->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
 	}
@@ -33,7 +33,6 @@ class MySQL{
 		$db = new DB();
 		$res = $db->getConn()->query($query);
 		$ret = $db->affected_rows;
-		try{ $res->close(); } catch(Exception $e){ error_log($e); }
 		try{ $db->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
 	}
