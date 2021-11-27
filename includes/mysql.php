@@ -24,8 +24,8 @@ class MySQL{
 		$db = new DB();
 		$res = $db->getConn()->query($query);
 		$ret = $res?$res->fetch_all():null;
-		try{ $res->close(); } catch(Exception $e){}
-		try{ $db->close(); } catch(Exception $e){}
+		try{ $res->close(); } catch(Exception $e){ error_log($e); }
+		try{ $db->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
 	}
 
@@ -33,8 +33,8 @@ class MySQL{
 		$db = new DB();
 		$res = $db->getConn()->query($query);
 		$ret $db->affected_rows;
-		try{ $res->close(); } catch(Exception $e){}
-		try{ $db->close(); } catch(Exception $e){}
+		try{ $res->close(); } catch(Exception $e){ error_log($e); }
+		try{ $db->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
 	}
 
