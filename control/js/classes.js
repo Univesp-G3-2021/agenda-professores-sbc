@@ -32,17 +32,18 @@ var loadSelectClasses = function(_esc_codigo){
             $("#sel_cls_codigo").append($("<option value='"+doc.cls_codigo+"'>"+doc.cls_descricao+" - "+doc.cls_turno+" (Prof. "+doc.prf_nome+")</option>").prop("doc",doc));
         }
     });
-    $("#sel_cls_codigo").on("change", function(){
-        var classe = $("#sel_cls_codigo option:selected").prop("doc");
-        console.log(classe);
-    });
 }
 
 var novaSolicitacao = function(){
-    var solicitacao = $("#sel_cls_codigo option:selected").prop("doc");
+    var solicitacao = $("#sel_cls_codigo option:selected").prop("doc") || {};
     solicitacao.sol_agenda_inicio = $("#sol_data_inicio").val();
     solicitacao.sol_agenda_termino = $("#sol_data_fim").val();
     solicitacao.sol_motivo = $("#sol_motivo option:selected").val();
     solicitacao.sol_obs = $("#sol_obs").text().trim()+" ";
-    console.log(solicitacao);
+    if(!!solicitacao.prf_codigo && solicitacao.sol_motivo!="" && solicitacao.sol_agenda_inicio!="" && solicitacao.sol_agenda_termino!=""){
+        $.post("/model/apsbc_model.php?className=Classe&methodName=gridAll&arguments=1",solicitacao,function(res){
+            if(res.status=="created") window.location.href='/view/secretaria/home_secretaria.html';
+            else alert("Erro ao criar solicitação!");
+        });
+    }else alert("Por favor, preencha os campos obrigatórios!");
 }

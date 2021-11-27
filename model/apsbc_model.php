@@ -175,6 +175,16 @@ class Agenda{
 
 }
 
+class Solicitacao{
+
+    public static function createSolicitacao($body){
+        $res = MySQL::update("INSERT INTO solicitacoes ('sol_codigo','prf_codigo','sol_datahora','sol_agenda_inicio','sol_agenda_termino','cls_codigo','sol_motivo','sol_comprovante','sol_atendida','sol_ativa') VALUES (NULL,'".$body["prf_codigo"]."',NOW(),'".$body["sol_agenda_inicio"]."','".$body["sol_agenda_termino"]."','".$body["cls_codigo"]."','".$body["sol_motivo"]."','',0,1)");
+        if($res==1) echo json_encode(array("status"=>"created"));
+        else echo json_encode(array("status"=>"failed"));
+    }
+
+}
+
 /*****************************
  *  REFLECTION METHOD CALL
  ****************************/
@@ -185,8 +195,14 @@ function doIt($className, $methodName, $arguments = []){
 }
 
 try{
-    error_log(json_encode($_REQUEST));
-    if(isset($_REQUEST["current"])){
+    try{
+        $bodyPayload = json_decode(file_get_contents('php://input'), true);
+    }catch(Exception $e){
+        unset($bodyPayload);
+    }
+    if(isset($bodyPayload)){
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], $bodyPayload);    
+    }else if(isset($_REQUEST["current"])){
         doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["searchPhrase"]));    
     }else{
         doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
