@@ -144,7 +144,7 @@ function doIt($className, $methodName, $arguments = []){
 try{
     error_log(json_encode($_REQUEST));
     if(isset($_REQUEST["current"])){
-        doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"])));    
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"]);    
     }else{
         doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
     }
