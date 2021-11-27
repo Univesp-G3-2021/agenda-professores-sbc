@@ -15,12 +15,13 @@ class Professor{
     }
 
     public static function getByClasse($cls_codigo){
-        $cls = MySQL::query("SELECT * FROM classe WHERE cls_codigo='$cls_codigo'");
-        $prf_codigo = $cls[0]['prf_codigo'];
-        $res = MySQL::query("SELECT * FROM professores WHERE prf_codigo='$prf_codigo'");
+        $res = MySQL::query("SELECT professores.* FROM classe,professores WHERE classe.cls_codigo='$cls_codigo' AND classe.prf_codigo=professores.prf_codigo");
+        //$prf_codigo = $cls[0]['prf_codigo'];
+        //$res = MySQL::query("SELECT * FROM professores WHERE prf_codigo='$prf_codigo'");
         echo json_encode($res);
     }
 
 }
 
+Professor::getByClasse('teste002');
 ?>
