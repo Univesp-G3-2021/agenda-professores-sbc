@@ -35,14 +35,14 @@ var modAgenda = {
                         var d1 = end._d.toISOString().split('T')[0];
                         $.ajax({
                             type: "GET",
-                            url: baseUrl+"/model/apsbc_model.php?className=Agenda&methodName=listMovimentosByDate&arguments="+d0+","+d1,
+                            url: "/model/apsbc_model.php?className=Agenda&methodName=listMovimentosByDate&arguments="+d0+","+d1,
                             success: function(res){
                                 var fs = [];
                                 for(var doc of res){
                                     fs.push({
-                                        start: new Date(doc.sol_agenda_inicio),
-                                        end: new Date(doc.sol_agenda_termino),
-                                        title: doc.esc_nome + "\n" + doc.prf_volante_nome
+                                        start: new Date(doc.sol_agenda_inicio).toISOString(),
+                                        end: new Date(doc.sol_agenda_termino).toISOString(),
+                                        title: doc.esc_nome + "\n" + doc.cls_descricao + "\n" + doc.prf_volante_nome
                                     });
                                 }
                                 callback(fs);
