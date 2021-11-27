@@ -1,6 +1,6 @@
 //$(function(){
 
-    $("#grid_home_escolas").one("show", function(){
+    $("#grid_home_escolas").bind("beforeShow", function(){
         
         $("#grid_home_escolas").bootgrid({
             ajax: true,
@@ -24,7 +24,7 @@
 
     }).hide().show();
 
-    $("#sel_esc_codigo").one("show",function(){
+    $("#sel_esc_codigo").bind("beforeShow",function(){
 
         $.get("/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=0",{},function(data){
             $("#sel_esc_codigo").empty();

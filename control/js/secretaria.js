@@ -1,6 +1,6 @@
 //$(function(){
 
-    $("#grid_home_secretaria").one("show", function(){
+    $("#grid_home_secretaria").bind("beforeShow", function(){
         //$('#nav-tabContent').empty().load("/view/secretaria/home_secretaria.html", function(){});
         $("#grid_home_secretaria").bootgrid({
             ajax: true,

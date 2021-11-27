@@ -1,6 +1,6 @@
 //$(function(){
 
-    $("#grid_preciso_volante").one("show", function(){
+    $("#grid_preciso_volante").bind("beforeShow", function(){
         $("#grid_preciso_volante").bootgrid({
             ajax: true,
             ajaxSettings: {
