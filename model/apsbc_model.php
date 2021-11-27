@@ -113,6 +113,10 @@ class Agenda{
 
 }
 
+/*****************************
+ *  REFLECTION METHOD CALL
+ ****************************/
+
 function doIt($className, $methodName, $arguments = []){
     $ref = new ReflectionMethod($className, $methodName);
     $ref->invokeArgs(NULL, $arguments);
@@ -120,6 +124,9 @@ function doIt($className, $methodName, $arguments = []){
 
 try{
     doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
-}catch(Exception $e){}
+}catch(Exception $e){
+    http_response_code(400);
+    echo json_encode($e);
+}
 
 ?>
