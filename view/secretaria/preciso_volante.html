@@ -16,7 +16,7 @@
     <script src="/control/js/escolas.js"></script>   
     <script src="/control/js/classes.js"></script>   
 </head>
-<body>
+<body onload="loadSelectEscolas()">
     <header>
         <nav>
 
@@ -40,7 +40,7 @@
                 <form method="POST" action="processa.php">
                     <div class="espaco_volantes_solicitacao">
                         <div class="formLinha1">
-                            <select name="esc_codigo" id="sel_esc_codigo" class="none" style="height: 25px;" onload="loadSelectEscolas()"></select>
+                            <select name="esc_codigo" id="sel_esc_codigo" class="none" style="height: 25px;"></select>
                         </div>
                         <div class="formLinha1">
                             <select name="cls_codigo" id="sel_cls_codigo" class="none" style="height: 25px;"></select>
