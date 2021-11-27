@@ -37,13 +37,17 @@
         <section id="grid_inversa">
             <div id="formulario">
                 <h2>Solicitação</h2>
-                <form method="POST" action="processa.php">
+                <!-- form method="POST" action="processa.php" -->
                     <div class="espaco_volantes_solicitacao">
                         <div class="formLinha1">
-                            <select name="esc_codigo" id="sel_esc_codigo" class="none" style="height: 25px;"></select>
+                            <select name="esc_codigo" id="sel_esc_codigo" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Escola</option>
+                            </select>
                         </div>
                         <div class="formLinha1">
-                            <select name="cls_codigo" id="sel_cls_codigo" class="none" style="height: 25px;"></select>
+                            <select name="cls_codigo" id="sel_cls_codigo" class="none" style="height: 25px;">
+                                <option value="" disabled selected>Turma / Período / Professor</option>
+                            </select>
                         </div>
                         <div class= "grid_2">
                             <h4>Data inicial</h4>
@@ -51,11 +55,11 @@
                         </div>
                         
                         <div class="formLinha2">
-                            <input type="date" name="data_inicio" placeholder="Data inicial" style="height: 25px;">
-                            <input type="date" name="data_fim" placeholder="Data final" style="height: 25px;">
+                            <input type="date" id="sol_data_inicio" placeholder="Data inicial" style="height: 25px;">
+                            <input type="date" id="sol_data_fim" placeholder="Data final" style="height: 25px;">
                         </div>
                         <div class="formLinha1">
-                            <select name="motivo" id= "Motivo" class="none" style="height: 25px;">
+                            <select name="motivo" id="sol_motivo" class="none" style="height: 25px;">
                                 <option value="" disabled selected>Motivo</option>
                                 <option value="Manhã">F.A.</option>
                                 <option value="Doacao_Sangue">Doação de sangue</option>
@@ -69,8 +73,8 @@
                             </select>
                         </div>
                         <textarea name="observacao" id="observacao" style="height:130px;" placeholder="Observação"></textarea>
-                    </form>
-                    <button type='submit' name="enviar" class="botao_escola">Enviar</button>
+                    <!-- /form -->
+                    <button type='submit' id="bt_new_solicitacao" name="enviar" class="botao_escola">Enviar</button>
                 </div>
             </div>
                 

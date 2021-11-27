@@ -24,7 +24,7 @@ var loadGridEscolas = function(){
 var loadSelectEscolas = function(){
     $.get("/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=0",{},function(data){
         $("#sel_esc_codigo").empty();
-        $("#sel_esc_codigo").append("<option value=''>-- escolha uma escola</option>");
+        $("#sel_esc_codigo").append("<option value='' disabled selected>Escola</option>");
         for(var doc of data){
             $("#sel_esc_codigo").append("<option value='"+doc.esc_codigo+"'>"+doc.esc_nome+"</option>");
         }
