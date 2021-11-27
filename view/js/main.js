@@ -23,7 +23,12 @@
 var _userPrincipalData = "";
 var _userPrincipal = function(){ return JSON.parse(atob(atob(_userPrincipalData))); }
 var _getUptkn = function(){ return _userPrincipalData; }
-
+var navItems = [
+    {label:"Calendário", module: modAgenda},
+    {label:"Escolas", module: modEscola},
+    {label:"Secretaria", module: modSecretaria},
+    {label:"Administrador", module: modAdmin},
+];
 $(function(){
     loading_bar = $("<img src='/view/imgs/loading.gif'>");
     $.ajaxSetup({
@@ -36,41 +41,7 @@ $(function(){
     });
     var _loadHome = function(){
         $('body').empty().load('/view/home.html',{},function(){
-            $("#agenda").fullCalendar({
-                header: {
-                    left: "prev,next today",
-                    center: "title",
-                    right: "month,agendaWeek,agendaDay,listMonth"
-                },
-                height: function(){return $("#nav-tabContent").innerHeight()-5;},
-                defaultView: "agendaWeek",
-                selectable: true,
-                locale: "pt-br",
-                buttonIcons: true,
-                weekNumbers: true,
-                navLinks: true, 
-                editable: true,
-                eventLimit: true, 
-                minTime: "00:00:00",
-                maxTime: "23:59:59",
-                scrollTime: "07:00:00",
-                slotEventOverlap: false,
-                businessHours: {
-                    daysOfWeek: [ 1, 2, 3, 4, 5 ],
-                    startTime: '07:00',
-                    endTime: '17:00',
-                },
-                windowResize: function(view) {
-                    $("#agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
-                },
-                eventSources: [],
-                events:[{
-                    id: "999",
-                    title: "Sample Event",
-                    start: "2021-10-06T09:30:00",
-                    end: "2021-10-06T10:30:00"
-                }]
-            });
+            modAgenda.load();
         });
     }
     _loadHome();
