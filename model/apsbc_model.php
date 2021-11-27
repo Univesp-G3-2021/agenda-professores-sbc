@@ -101,6 +101,20 @@ class Agenda{
         echo json_encode($res);
     }
 
+    public static function gridSolicitacoes($page=1, $limit=10){
+        $offset = $page * $limit;
+        $ct = MySQL::query("SELECT count(sol_codigo) as quant FROM agenda_solicitacoes_abertas");
+        $res = MySQL::query("SELECT * FROM agenda_solicitacoes_abertas ORDER BY sol_agenda_inicio LIMIT $offset, $limit");
+        echo json_encode(
+            array(
+                "current"=>$page, 
+                "rowCount"=>$limit, 
+                "rows"=>$res, 
+                "total"=>$ct[0]["quant"]
+            )
+        );
+    }
+
     public static function listMovimentosByDate($sol_agenda_inicio, $sol_agenda_termino){
         $res = MySQL::query("SELECT * FROM agenda_volantes WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino'");
         echo json_encode($res);
