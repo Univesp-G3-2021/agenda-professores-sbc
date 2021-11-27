@@ -99,6 +99,8 @@ function doIt($className, $methodName, $arguments = []){
     $ref->invokeArgs(NULL, $arguments);
 }
 
-doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
+try{
+    doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
+}catch(Exception $e){}
 
 ?>
