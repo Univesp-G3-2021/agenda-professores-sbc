@@ -103,11 +103,14 @@ class Classe{
     public static function gridAll($page=1, $limit=10, $searchPhrase=""){
         $offset = ($page-1) * $limit;
         
+        $qLimit = " LIMIT $offset, $limit";
+        if($limit == -1) $qLimit = "";
+        
         $fullTxtSrch = "";
         if(strlen(trim($searchPhrase))>3) $fullTxtSrch = "WHERE esc_nome LIKE '%$searchPhrase%'"; 
         
         $ct = MySQL::query("SELECT count(cls_codigo) as quant FROM classe_detalhe");
-        $res = MySQL::query("SELECT * FROM classe_detalhe $fullTxtSrch ORDER BY esc_nome LIMIT $offset, $limit");
+        $res = MySQL::query("SELECT * FROM classe_detalhe $fullTxtSrch ORDER BY esc_nome $qLimit");
         echo json_encode(
             array(
                 "current"=>$page, 
