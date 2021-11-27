@@ -13,6 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.fa.min.js"></script>
+    <script src="/control/js/escolas.js"></script>   
     <script src="/control/js/classes.js"></script>   
 </head>
 <body>
@@ -38,15 +39,11 @@
                 <h2>Solicitação</h2>
                 <form method="POST" action="processa.php">
                     <div class="espaco_volantes_solicitacao">
-                        <div class="formLinha2">
-                            <table id="grid_preciso_volante">
-                                <thead>
-                                    <th data-column-id="esc_nome">escola</th>
-                                    <th data-column-id="cls_descricao">turma</th>
-                                    <th data-column-id="cls_turno">turno</th>
-                                    <th data-column-id="prf_nome">professor</th>
-                                </thead>
-                            </table>
+                        <div class="formLinha1">
+                            <select name="esc_codigo" id="sel_esc_codigo" class="none" style="height: 25px;"></select>
+                        </div>
+                        <div class="formLinha1">
+                            <select name="cls_codigo" id="sel_cls_codigo" class="none" style="height: 25px;"></select>
                         </div>
                         <div class= "grid_2">
                             <h4>Data inicial</h4>

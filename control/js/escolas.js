@@ -1,5 +1,7 @@
-var modEscolas = {
-    load: function(){
+$(function(){
+
+    $("#grid_home_escolas").on("load", function(){
+        
         $("#grid_home_escolas").bootgrid({
             ajax: true,
             ajaxSettings: {
@@ -16,14 +18,24 @@ var modEscolas = {
                 refres: "recarregar",
                 search: "localizar"
             }
-        }).on("load.rs.jquery.bootgrid", function (e)
-        {
+        }).on("load.rs.jquery.bootgrid", function (e){
             console.log(e);
         });
-    }
-}
+
+    })
+
+    $("#sel_esc_codigo").on("load",function(){
+
+        $.get("/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=0",{},function(data){
+            $("#sel_esc_codigo").empty();
+            for(var doc of data){
+                $("#sel_esc_codigo").append("<option value='"+doc.esc_codigo+"'>"+doc.esc_nome+"</option>");
+            }
+        });
+
+    });
 
 
-$(function(){
-    modEscolas.load();
+
+
 });
