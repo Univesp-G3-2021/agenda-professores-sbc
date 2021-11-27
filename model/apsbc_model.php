@@ -199,8 +199,9 @@ function doIt($className, $methodName, $arguments = []){
 
 try{
     try{
+        $payload = file_get_contents('php://input');
+        error_log($payload);
         $bodyPayload = json_decode(file_get_contents('php://input'), true);
-        error_log(json_encode($bodyPayload));
     }catch(Exception $e){
         unset($bodyPayload);
     }

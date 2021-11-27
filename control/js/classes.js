@@ -41,7 +41,7 @@ var novaSolicitacao = function(){
     solicitacao.sol_motivo = $("#sol_motivo option:selected").val();
     solicitacao.sol_obs = $("#sol_obs").text().trim()+" ";
     if(!!solicitacao.prf_codigo && solicitacao.sol_motivo!="" && solicitacao.sol_agenda_inicio!="" && solicitacao.sol_agenda_termino!=""){
-        $.post("/model/apsbc_model.php?className=Solicitacao&methodName=createSolicitacao&arguments=1",solicitacao,function(res){
+        $.post("/model/apsbc_model.php?className=Solicitacao&methodName=createSolicitacao&arguments=1",JSON.stringify(solicitacao),function(res){
             if(res.status=="created") window.location.href='/view/secretaria/home_secretaria.html';
             else alert("Erro ao criar solicitação!");
         });
