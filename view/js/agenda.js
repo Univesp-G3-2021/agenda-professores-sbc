@@ -29,7 +29,7 @@ var modAgenda = {
                 $("#nav-tabContent #agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
             },
             eventSources: [
-/*                {
+                {
                     events: function(start, end, timezone, callback){
                         var d0 = start._d.toISOString().split('T')[0];
                         var d1 = end._d.toISOString().split('T')[0];
@@ -50,10 +50,34 @@ var modAgenda = {
                             error: function(e){}
                         });
                     },
-                    color: 'yellow',
+                    color: 'cian',
                     textColor: 'black'
+                },
+                {
+                    events: function(start, end, timezone, callback){
+                        var d0 = start._d.toISOString().split('T')[0];
+                        var d1 = end._d.toISOString().split('T')[0];
+                        $.ajax({
+                            type: "GET",
+                            url: "/model/apsbc_model.php?className=Agenda&methodName=listSolicitacoesByDate&arguments="+d0+","+d1,
+                            success: function(res){
+                                var fs = [];
+                                for(var doc of res){
+                                    fs.push({
+                                        start: new Date(doc.sol_agenda_inicio).toISOString(),
+                                        end: new Date(doc.sol_agenda_termino).toISOString(),
+                                        title: doc.esc_nome + "\n" + doc.cls_descricao + "\n" + doc.prf_nome
+                                    });
+                                }
+                                callback(fs);
+                            },
+                            error: function(e){}
+                        });
+                    },
+                    color: 'red',
+                    textColor: 'white'
                 }
-            */            ],
+            ],
             events:[{
                 id: "999",
                 title: "Sample Event",
