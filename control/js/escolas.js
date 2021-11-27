@@ -1,4 +1,5 @@
 var loadGridEscolas = function(){
+    console.log("#grid_home_escolas");
     $("#grid_home_escolas").bootgrid({
         ajax: true,
         ajaxSettings: {
@@ -22,7 +23,7 @@ var loadGridEscolas = function(){
 };
 
 var loadSelectEscolas = function(){
-
+    console.log("#sel_esc_codigo");
     $.get("/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=0",{},function(data){
         $("#sel_esc_codigo").empty();
         for(var doc of data){
