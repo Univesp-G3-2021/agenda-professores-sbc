@@ -29,7 +29,7 @@ var loadSelectClasses = function(_esc_codigo){
         $("#sel_cls_codigo").empty();
         $("#sel_cls_codigo").append("<option value='' disabled>-- escolha uma turma</option>");
         for(var doc of data){
-            $("#sel_cls_codigo").append("<option value='"+doc.cls_codigo+"'>"+doc.cls_descricao+"\t("+doc.prf_nome+")</option>");
+            $("#sel_cls_codigo").append("<option value='"+doc.cls_codigo+"'>"+doc.cls_descricao+" - "+doc.cls_turno+" (Prof. "+doc.prf_nome+")</option>");
         }
     });
     $("#sel_cls_codigo").on("change", function(){
