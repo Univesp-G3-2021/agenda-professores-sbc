@@ -8,3 +8,6 @@ var modSecretaria = {
         });
     }
 }
+$(function(){
+    modSecretaria.load();
+});
