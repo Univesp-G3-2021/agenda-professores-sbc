@@ -1,5 +1,4 @@
 var loadGridSolicitacoes = function(){
-    console.log("#grid_home_secretaria");
     $("#grid_home_secretaria").bootgrid({
         ajax: true,
         ajaxSettings: {

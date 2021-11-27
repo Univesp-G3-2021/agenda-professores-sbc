@@ -23,3 +23,17 @@ var loadPrecisoVolanteGrid = function(){
         console.log(e);
     });
 }
+
+var loadSelectClasses = function(_esc_codigo){
+    $.get("/model/apsbc_model.php?className=Classe&methodName=listByEscola&arguments="+_esc_codigo,{},function(data){
+        $("#sel_cls_codigo").empty();
+        $("#sel_cls_codigo").append("<option value='' disabled>-- escolha uma escola</option>");
+        for(var doc of data){
+            $("#sel_cls_codigo").append("<option value='"+doc.cls_codigo+"'>"+doc.cls_descricao+"\t("+doc.prf_nome+")</option>");
+        }
+    });
+    $("#sel_cls_codigo").on("change", function(){
+        var _cls_codigo = $("#sel_cls_codigo option:selected").val();
+        console.log(_esc_codigo);
+    });
+}

@@ -1,5 +1,4 @@
 var loadGridEscolas = function(){
-    console.log("#grid_home_escolas");
     $("#grid_home_escolas").bootgrid({
         ajax: true,
         ajaxSettings: {
@@ -23,12 +22,15 @@ var loadGridEscolas = function(){
 };
 
 var loadSelectEscolas = function(){
-    console.log("#sel_esc_codigo");
     $.get("/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=0",{},function(data){
         $("#sel_esc_codigo").empty();
+        $("#sel_esc_codigo").append("<option value='' disabled>-- escolha uma escola</option>");
         for(var doc of data){
             $("#sel_esc_codigo").append("<option value='"+doc.esc_codigo+"'>"+doc.esc_nome+"</option>");
         }
     });
-
+    $("#sel_esc_codigo").on("change", function(){
+        var _esc_codigo = $("#sel_esc_codigo option:selected").val();
+        loadSelectClasses(_esc_codigo);
+    });
 }
