@@ -27,7 +27,7 @@ var loadPrecisoVolanteGrid = function(){
 var loadSelectClasses = function(_esc_codigo){
     $.get("/model/apsbc_model.php?className=Classe&methodName=listByEscola&arguments="+_esc_codigo,{},function(data){
         $("#sel_cls_codigo").empty();
-        $("#sel_cls_codigo").append("<option value='' disabled>-- escolha uma turma</option>");
+        $("#sel_cls_codigo").append("<option value=''>-- escolha uma turma</option>");
         for(var doc of data){
             $("#sel_cls_codigo").append("<option value='"+doc.cls_codigo+"'>"+doc.cls_descricao+" - "+doc.cls_turno+" (Prof. "+doc.prf_nome+")</option>");
         }
