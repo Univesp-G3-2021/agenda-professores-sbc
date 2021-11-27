@@ -23,12 +23,6 @@
 var _userPrincipalData = "";
 var _userPrincipal = function(){ return JSON.parse(atob(atob(_userPrincipalData))); }
 var _getUptkn = function(){ return _userPrincipalData; }
-var navItems = [
-    {label:"Calendário", module: modAgenda},
-    {label:"Escolas", module: modEscola},
-    {label:"Secretaria", module: modSecretaria},
-    {label:"Administrador", module: modAdmin},
-];
 $(function(){
     loading_bar = $("<img src='/view/imgs/loading.gif'>");
     $.ajaxSetup({

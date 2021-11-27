@@ -96,6 +96,11 @@ class Classe{
 
 class Agenda{
 
+    public static function listSolicitacoesByDate($sol_agenda_inicio, $sol_agenda_termino){
+        $res = MySQL::query("SELECT * FROM agenda_solicitacoes_abertas WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino'");
+        echo json_encode($res);
+    }
+
     public static function listMovimentosByDate($sol_agenda_inicio, $sol_agenda_termino){
         $res = MySQL::query("SELECT * FROM agenda_volantes WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino'");
         echo json_encode($res);
