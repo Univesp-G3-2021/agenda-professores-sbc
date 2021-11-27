@@ -101,7 +101,7 @@ class Agenda{
         echo json_encode($res);
     }
 
-    public static function gridSolicitacoes($page=1, $limit=10){
+    public static function gridSolicitacoes($page=0, $limit=10){
         $offset = $page * $limit;
         $ct = MySQL::query("SELECT count(sol_codigo) as quant FROM agenda_solicitacoes_abertas");
         $res = MySQL::query("SELECT * FROM agenda_solicitacoes_abertas ORDER BY sol_agenda_inicio LIMIT $offset, $limit");
