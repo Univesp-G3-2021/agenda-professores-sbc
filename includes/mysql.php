@@ -1,14 +1,14 @@
 <?php
 class DB{
-	//private $servername = ini_get('mysqli.default_host');
-	//private $username = ini_get('mysqli.default_user');
-	//private $password = ini_get('mysqli.default_pw');
-	//private $database = ini_get('mysqli.default_user');
 	private $conn = null;
 
 	public function getConn(){
 		if(is_null($this->conn)){
-			$this->conn = new mysqli(ini_get('mysqli.default_host'), ini_get('mysqli.default_user'), ini_get('mysqli.default_pw'), ini_get('mysqli.default_user'));
+			$servername = ini_get('mysqli.default_host');
+			$username = ini_get('mysqli.default_user');
+			$password = ini_get('mysqli.default_pw');
+			$database = ini_get('mysqli.default_user');
+			$this->conn = new mysqli($servername, $username, $password, $database);
 			if ($this->conn->connect_errno) {
 				error_log("Failed to connect to MySQL: ".$this->conn->connect_error, 0);
 				exit();
