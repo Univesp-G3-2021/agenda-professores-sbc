@@ -8,6 +8,10 @@ var modClasses = {
             },
             url: "/model/apsbc_model.php?className=Classe&methodName=gridAll&arguments=1,10",
             formatters:{},
+            navigation: 0,
+            rowCount: -1,
+            selection: true,
+            
             labels:{
                 noResults: "sem registros",
                 infos: "exibindo {{ctx.start}} a {{ctx.end}} de {{ctx.total}} registro(s)",
