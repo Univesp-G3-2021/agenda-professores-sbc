@@ -167,7 +167,7 @@ FROM
                 `solicitacoes`.`sol_codigo` = `movimentos`.`sol_codigo`
             )
         )
-    )
+    );
 
 CREATE VIEW `agenda_classe` AS SELECT
     `agenda`.`sol_codigo` AS `sol_codigo`,
@@ -193,7 +193,7 @@ FROM
                 `agenda`.`cls_codigo` = `classe`.`cls_codigo`
             )
         )
-    )
+    );
 
 CREATE VIEW `agenda_classe_solicitacao` AS SELECT
     `agenda_solicitacoes`.`sol_codigo` AS `sol_codigo`,
@@ -218,7 +218,7 @@ FROM
                 `agenda_solicitacoes`.`cls_codigo` = `classe`.`cls_codigo`
             )
         )
-    )
+    );
 
 CREATE VIEW `agenda_escola` AS SELECT
     `agenda_classe`.`sol_codigo` AS `sol_codigo`,
@@ -249,7 +249,7 @@ FROM
                 `agenda_classe`.`esc_codigo` = `escolas`.`esc_codigo`
             )
         )
-    )
+    );
 
 CREATE VIEW `agenda_escola_solicitacao` AS SELECT
     `agenda_classe_solicitacao`.`sol_codigo` AS `sol_codigo`,
@@ -279,7 +279,7 @@ FROM
                 `agenda_classe_solicitacao`.`esc_codigo` = `escolas`.`esc_codigo`
             )
         )
-    )
+    );
 
 CREATE VIEW `agenda_solicitacoes` AS SELECT
     `solicitacoes`.`sol_codigo` AS `sol_codigo`,
@@ -304,7 +304,7 @@ WHERE
                 `movimentos`
         )
         )
-    )
+    );
 
 CREATE VIEW `agenda_solicitacoes_abertas` AS SELECT
     `agenda_escola_solicitacao`.`sol_codigo` AS `sol_codigo`,
@@ -337,7 +337,7 @@ FROM
                 `agenda_escola_solicitacao`.`prf_codigo` = `professores`.`prf_codigo`
             )
         )
-    )
+    );
 
 CREATE VIEW `agenda_volantes` AS SELECT
     `agenda_escola`.`sol_codigo` AS `sol_codigo`,
@@ -370,4 +370,4 @@ FROM
                 `agenda_escola`.`prf_volante` = `professores`.`prf_codigo`
             )
         )
-    )
+    );
