@@ -143,7 +143,11 @@ function doIt($className, $methodName, $arguments = []){
 
 try{
     error_log(json_encode($_REQUEST));
-    doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
+    if(isset($_REQUEST["current"])){
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"])));    
+    }else{
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
+    }
 }catch(Exception $e){
     http_response_code(400);
     echo json_encode($e);
