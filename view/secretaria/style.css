@@ -555,3 +555,7 @@ h4 {
 .escola_22:hover {
     background-color: rgba(243, 146, 36, 0.36);
 }
+
+.bootgrid-table{
+    font-size: .8rem;
+}
