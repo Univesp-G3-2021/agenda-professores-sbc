@@ -37,3 +37,12 @@ var loadSelectClasses = function(_esc_codigo){
         console.log(classe);
     });
 }
+
+var novaSolicitacao = function(){
+    var solicitacao = $("#sel_cls_codigo option:selected").prop("doc");
+    solicitacao.sol_agenda_inicio = $("#sol_data_inicio").val();
+    solicitacao.sol_agenda_termino = $("#sol_data_fim").val();
+    solicitacao.sol_motivo = $("#sol_motivo option:selected").val();
+    solicitacao.sol_obs = $("#sol_obs").text().trim()+" ";
+    console.log(solicitacao);
+}
