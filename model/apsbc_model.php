@@ -204,7 +204,7 @@ try{
     }catch(Exception $e){
         unset($payload);
     }
-    if(isset($payload)){
+    if(isset($payload) && !empty($payload)){
         doIt($_REQUEST["className"], $_REQUEST["methodName"], $payload);    
     }else if(isset($_REQUEST["current"])){
         doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["searchPhrase"]));    
