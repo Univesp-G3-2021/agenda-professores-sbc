@@ -20,6 +20,7 @@
  * 
  *************************************************************************/
 
+/*
 var _userPrincipalData = "";
 var _userPrincipal = function(){ return JSON.parse(atob(atob(_userPrincipalData))); }
 var _getUptkn = function(){ return _userPrincipalData; }
@@ -40,3 +41,6 @@ $(function(){
     }
     _loadHome();
 });
+*/
+
+top.location.href = "https://agenda-professores-sbc.projeto-integrador.app.br/view/pre-home/pre-home.html";
