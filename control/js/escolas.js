@@ -1,4 +1,4 @@
-$(function(){
+//$(function(){
 
     $("#grid_home_escolas").on("ready", function(){
         
@@ -38,4 +38,4 @@ $(function(){
 
 
 
-});
+//});
