@@ -1,6 +1,6 @@
 //$(function(){
 
-    $("#grid_preciso_volante").one("load", function(){
+    $("#grid_preciso_volante").one("show", function(){
         $("#grid_preciso_volante").bootgrid({
             ajax: true,
             ajaxSettings: {
@@ -25,6 +25,6 @@
         {
             console.log(e);
         });
-    });
+    }).hide().show();
 
 //});

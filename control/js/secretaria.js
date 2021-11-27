@@ -1,6 +1,6 @@
 //$(function(){
 
-    $("#grid_home_secretaria").one("load", function(){
+    $("#grid_home_secretaria").one("show", function(){
         //$('#nav-tabContent').empty().load("/view/secretaria/home_secretaria.html", function(){});
         $("#grid_home_secretaria").bootgrid({
             ajax: true,
@@ -22,7 +22,7 @@
         {
             console.log(e);
         });
-    });
+    }).hide().show();
 
 
 //});

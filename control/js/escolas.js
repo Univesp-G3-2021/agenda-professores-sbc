@@ -1,6 +1,6 @@
 //$(function(){
 
-    $("#grid_home_escolas").one("load", function(){
+    $("#grid_home_escolas").one("show", function(){
         
         $("#grid_home_escolas").bootgrid({
             ajax: true,
@@ -22,9 +22,9 @@
             console.log(e);
         });
 
-    })
+    }).hide().show();
 
-    $("#sel_esc_codigo").one("load",function(){
+    $("#sel_esc_codigo").one("show",function(){
 
         $.get("/model/apsbc_model.php?className=Escola&methodName=listAll&arguments=0",{},function(data){
             $("#sel_esc_codigo").empty();
@@ -33,7 +33,7 @@
             }
         });
 
-    });
+    }).hide().show();
 
 
 
