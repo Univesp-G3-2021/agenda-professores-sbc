@@ -94,6 +94,25 @@ class Classe{
 
 }
 
+class Agenda{
+
+    public static function listByDate($sol_agenda_inicio, $sol_agenda_termino){
+        $res = MySQL::query("SELECT * FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino'");
+        echo json_encode($res);
+    }
+
+    public static function listByDateByVolante($sol_agenda_inicio, $sol_agenda_termino, $prf_volante){
+        $res = MySQL::query("SELECT * FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino' AND prf_volante='$prf_volante'");
+        echo json_encode($res);
+    }
+    
+    public static function listVolantesLivres($sol_agenda_inicio, $sol_agenda_termino){
+        $res = MySQL::query("SELECT * FROM professores WHERE prf_condicao='volante' AND prf_codigo NOT IN (SELECT prf_volante FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino')");
+        echo json_encode($res[0]);
+    }
+
+}
+
 function doIt($className, $methodName, $arguments = []){
     $ref = new ReflectionMethod($className, $methodName);
     $ref->invokeArgs(NULL, $arguments);
