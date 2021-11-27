@@ -26,15 +26,15 @@ class MySQL{
 		$res = $db->getConn()->query($query);
 		$ret = $res ? $res->fetch_all(MYSQLI_ASSOC) : null;
 		if($res!=false) try{ $res->free_result(); } catch(Exception $e){ error_log($e); }
-		try{ $db->close(); } catch(Exception $e){ error_log($e); }
+		try{ $db->getConn()->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
 	}
 
 	public static function update($query){
 		$db = new DB();
 		$res = $db->getConn()->query($query);
-		$ret = $db->affected_rows;
-		try{ $db->close(); } catch(Exception $e){ error_log($e); }
+		$ret = $db->getConn()->affected_rows;
+		try{ $db->getConn()->close(); } catch(Exception $e){ error_log($e); }
 		return $ret;
 	}
 
