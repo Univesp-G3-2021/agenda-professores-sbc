@@ -177,7 +177,8 @@ class Agenda{
 
 class Solicitacao{
 
-    public static function createSolicitacao($body){
+    public static function createSolicitacao($payload){
+        $body = json_decode($payload, true);
         $q = "INSERT INTO solicitacoes ('sol_codigo','prf_codigo','sol_datahora','sol_agenda_inicio','sol_agenda_termino','cls_codigo','sol_motivo','sol_comprovante','sol_atendida','sol_ativa') VALUES (NULL,'".$body["prf_codigo"]."',NOW(),'".$body["sol_agenda_inicio"]."','".$body["sol_agenda_termino"]."','".$body["cls_codigo"]."','".$body["sol_motivo"]."','',0,1)";
         $res = MySQL::update($q);
         error_log($res);
@@ -200,13 +201,11 @@ function doIt($className, $methodName, $arguments = []){
 try{
     try{
         $payload = file_get_contents('php://input');
-        error_log($payload);
-        $bodyPayload = json_decode(file_get_contents('php://input'), true);
     }catch(Exception $e){
-        unset($bodyPayload);
+        unset($payload);
     }
-    if(isset($bodyPayload)){
-        doIt($_REQUEST["className"], $_REQUEST["methodName"], $bodyPayload);    
+    if(isset($payload)){
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], $payload);    
     }else if(isset($_REQUEST["current"])){
         doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["searchPhrase"]));    
     }else{
