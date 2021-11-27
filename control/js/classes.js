@@ -1,5 +1,6 @@
-var modClasses = {
-    load: function(){
+$(function(){
+
+    $("#grid_preciso_volante").on("ready", function(){
         $("#grid_preciso_volante").bootgrid({
             ajax: true,
             ajaxSettings: {
@@ -11,7 +12,7 @@ var modClasses = {
             navigation: 0,
             rowCount: -1,
             selection: true,
-            
+
             labels:{
                 noResults: "sem registros",
                 infos: "exibindo {{ctx.start}} a {{ctx.end}} de {{ctx.total}} registro(s)",
@@ -24,10 +25,6 @@ var modClasses = {
         {
             console.log(e);
         });
-    }
-}
+    });
 
-
-$(function(){
-    modClasses.load();
 });

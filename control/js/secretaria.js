@@ -1,5 +1,6 @@
-var modSecretaria = {
-    load: function(){
+$(function(){
+
+    $("#grid_home_secretaria").on("ready", function(){
         //$('#nav-tabContent').empty().load("/view/secretaria/home_secretaria.html", function(){});
         $("#grid_home_secretaria").bootgrid({
             ajax: true,
@@ -21,10 +22,7 @@ var modSecretaria = {
         {
             console.log(e);
         });
-    }
-}
+    });
 
 
-$(function(){
-    modSecretaria.load();
 });
