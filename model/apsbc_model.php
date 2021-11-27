@@ -200,6 +200,7 @@ function doIt($className, $methodName, $arguments = []){
 try{
     try{
         $bodyPayload = json_decode(file_get_contents('php://input'), true);
+        error_log(json_encode($bodyPayload));
     }catch(Exception $e){
         unset($bodyPayload);
     }
