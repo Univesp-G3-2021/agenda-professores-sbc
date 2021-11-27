@@ -103,8 +103,10 @@ class Agenda{
 
     public static function gridSolicitacoes($page=1, $limit=10, $searchPhrase=""){
         $offset = ($page-1) * $limit;
+        
         $fullTxtSrch = "";
         if(strlen(trim($searchPhrase))>3) $fullTxtSrch = "WHERE esc_nome LIKE '%$searchPhrase%'"; 
+        
         $ct = MySQL::query("SELECT count(sol_codigo) as quant FROM agenda_solicitacoes_abertas");
         $res = MySQL::query("SELECT * FROM agenda_solicitacoes_abertas $fullTxtSrch ORDER BY sol_agenda_inicio LIMIT $offset, $limit");
         echo json_encode(
@@ -146,7 +148,7 @@ function doIt($className, $methodName, $arguments = []){
 try{
     error_log(json_encode($_REQUEST));
     if(isset($_REQUEST["current"])){
-        doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["serchPhrase"]));    
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["searchPhrase"]));    
     }else{
         doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
     }
