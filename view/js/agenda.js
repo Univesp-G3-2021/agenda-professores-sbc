@@ -29,7 +29,7 @@ var modAgenda = {
                 $("#nav-tabContent #agenda").fullCalendar('option', 'height', $("#nav-tabContent").innerHeight()-5);                        
             },
             eventSources: [
-                {
+/*                {
                     events: function(start, end, timezone, callback){
                         var d0 = start._d.toISOString().split('T')[0];
                         var d1 = end._d.toISOString().split('T')[0];
@@ -53,7 +53,7 @@ var modAgenda = {
                     color: 'yellow',
                     textColor: 'black'
                 }
-            ],
+            */            ],
             events:[{
                 id: "999",
                 title: "Sample Event",
