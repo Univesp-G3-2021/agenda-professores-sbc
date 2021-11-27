@@ -43,4 +43,4 @@ $(function(){
 });
 */
 
-top.location.href = "https://agenda-professores-sbc.projeto-integrador.app.br/view/pre-home/pre-home.html";
+top.location.href = "/view/pre-home/pre-home.html";
