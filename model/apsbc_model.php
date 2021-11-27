@@ -108,7 +108,7 @@ class Agenda{
     
     public static function listVolantesLivres($sol_agenda_inicio, $sol_agenda_termino){
         $res = MySQL::query("SELECT * FROM professores WHERE prf_condicao='volante' AND prf_codigo NOT IN (SELECT prf_volante FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino')");
-        echo json_encode($res[0]);
+        echo json_encode($res);
     }
 
 }
