@@ -559,3 +559,10 @@ h4 {
 .bootgrid-table{
     font-size: .8rem;
 }
+
+.odd {
+    background-color: cadetblue;
+}
+.even {
+    background-color: gray;
+}
