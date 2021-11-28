@@ -26,6 +26,14 @@ var loadSolicitacao = function(){
     const urlParams = new URLSearchParams(window.location.search);
     const sol_codigo = urlParams.get('sol');
     $.get("/model/apsbc_model.php?className=Solicitacao&methodName=get&arguments="+sol_codigo,{},function(res){
-        console.log(res);
+        $("#esc_nome").html(res.esc_nome);
+        $("#prf_nome").html(res.prf_nome);
+        $("#sol_agenda_inicio").html(res.sol_agenda_inicio);
+        $("#sol_agenda_termino").html(res.sol_agenda_termino);
+        $("#cls_turno").html(res.cls_turno);
+        $("#cls_descricao").html(res.cls_descricao);
+        $("#sol_motivo").html(res.sol_motivo);
+        $("#sol_comprovante").html(res.sol_comprovante);
+        $("#sol_obs").html(res.sol_obs);
     });
 }
