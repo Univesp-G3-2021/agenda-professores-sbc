@@ -173,6 +173,24 @@ class Agenda{
         echo json_encode($res);
     }
 
+    public static function gridVolantesLivres($page=1, $limit=10, $searchPhrase="", $sol_agenda_inicio, $sol_agenda_termino){
+        $offset = ($page-1) * $limit;
+        
+        $fullTxtSrch = "";
+        if(strlen(trim($searchPhrase))>3) $fullTxtSrch = "WHERE prf_nome LIKE '%$searchPhrase%'"; 
+        
+        $ct = MySQL::query("SELECT count(prf_codigo) as quant FROM professores WHERE prf_condicao='volante'");
+        $res = MySQL::query("SELECT * FROM professor_escola WHERE prf_condicao='volante' AND prf_codigo NOT IN (SELECT prf_volante FROM agenda WHERE sol_agenda_inicio>='$sol_agenda_inicio' AND sol_agenda_inicio<'$sol_agenda_termino')");
+        echo json_encode(
+            array(
+                "current"=>$page, 
+                "rowCount"=>$limit, 
+                "rows"=>$res, 
+                "total"=>$ct[0]["quant"]
+            )
+        );
+    }
+
 }
 
 class Solicitacao{
@@ -212,7 +230,7 @@ try{
     if(isset($payload) && !empty($payload)){
         doIt($_REQUEST["className"], $_REQUEST["methodName"], array($payload));    
     }else if(isset($_REQUEST["current"])){
-        doIt($_REQUEST["className"], $_REQUEST["methodName"], array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["searchPhrase"]));    
+        doIt($_REQUEST["className"], $_REQUEST["methodName"], array_merge(array($_REQUEST["current"], $_REQUEST["rowCount"], $_REQUEST["searchPhrase"]),explode(",", $_REQUEST["arguments"])));    
     }else{
         doIt($_REQUEST["className"], $_REQUEST["methodName"], explode(",", $_REQUEST["arguments"]));
     }
