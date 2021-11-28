@@ -18,6 +18,14 @@ var loadGridSolicitacoes = function(){
             search: "localizar"
         }
     }).on("click.rs.jquery.bootgrid", function (evt,cols,row){
-        console.log(row);
+        window.location.href="/view/secretaria/solicitacoes.html?sol="+row.sol_codigo;
+    });
+}
+
+var loadSolicitacao = function(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const sol_codigo = urlParams.get('sol');
+    $.get("/model/apsbc_model.php?className=Solicitacao&methodName=get&arguments="+sol_codigo,{},function(res){
+        console.log(res);
     });
 }

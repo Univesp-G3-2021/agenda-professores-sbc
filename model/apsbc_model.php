@@ -177,6 +177,11 @@ class Agenda{
 
 class Solicitacao{
 
+    public static function get($sol_codigo){
+        $res = MySQL::query("SELECT * FROM agenda_solicitacoes_abertas WHERE sol_codigo='$sol_codigo'");
+        echo json_encode($res[0]);
+    }
+
     public static function createSolicitacao($payload){
         $body = json_decode($payload, true);
         $q = "INSERT INTO solicitacoes (sol_codigo,prf_codigo,sol_datahora,sol_agenda_inicio,sol_agenda_termino,cls_codigo,sol_motivo,sol_comprovante,sol_atendida,sol_ativa) VALUES (NULL,'".$body["prf_codigo"]."',NOW(),'".$body["sol_agenda_inicio"]."','".$body["sol_agenda_termino"]."','".$body["cls_codigo"]."','".$body["sol_motivo"]."','',0,1)";
