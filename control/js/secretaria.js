@@ -17,8 +17,7 @@ var loadGridSolicitacoes = function(){
             refres: "recarregar",
             search: "localizar"
         }
-    }).on("load.rs.jquery.bootgrid", function (e)
-    {
-        console.log(e);
+    }).on("click.rs.jquery.bootgrid", function (evt,cols,row){
+        console.log(row);
     });
 }
