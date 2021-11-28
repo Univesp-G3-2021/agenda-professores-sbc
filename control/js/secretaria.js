@@ -27,6 +27,7 @@ var loadSolicitacao = function(){
     const sol_codigo = urlParams.get('sol');
     $.get("/model/apsbc_model.php?className=Solicitacao&methodName=get&arguments="+sol_codigo,{},function(res){
         $("#esc_nome").html(res.esc_nome);
+        $("#esc_bairro").html(res.esc_bairro);
         $("#prf_nome").html(res.prf_nome);
         $("#sol_agenda_inicio").html(new Date(res.sol_agenda_inicio).toLocaleDateString());
         $("#sol_agenda_termino").html(new Date(res.sol_agenda_termino).toLocaleDateString());
