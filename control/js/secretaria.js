@@ -7,6 +7,8 @@ var loadGridSolicitacoes = function(){
         },
         url: "/model/apsbc_model.php?className=Agenda&methodName=gridSolicitacoes&arguments=1,10",
         formatters:{},
+        selection: true,
+        rowSelect: true,
         labels:{
             noResults: "sem registros",
             infos: "exibindo {{ctx.start}} a {{ctx.end}} de {{ctx.total}} registro(s)",
