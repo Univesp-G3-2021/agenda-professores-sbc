@@ -8,7 +8,7 @@
  - Emerson de Mattos Reis <2009360@aluno.univesp.br>
  - Guilherme Padilha Batista <2011386@aluno.univesp.br>
  - Marcos Lohmann <2006775@aluno.univesp.br>
- - Rodrigo Henrique Machado da Silva <1402332@aluno.univesp.br> 
+ - _Rodrigo Henrique Machado da Silva <1402332@aluno.univesp.br>_ 
  - Victoria Sayuri Ishibaru da Silva <2007625@aluno.univesp.br>
 
 ## Tema
